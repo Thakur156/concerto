@@ -12,7 +12,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "prebuild": "npm-run-all clean generate-types generate-validator",
-    "build": "tsc -p tsconfig.build.json && npm run build:esm",
+    "build": "node init && tsc -p tsconfig.build.json && npm run build:esm",
     "postbuild": "cpx \"src/spec/*.json\" dist/spec/",
     "pretest": "npm-run-all lint",
     "lint": "eslint .",
@@ -20,7 +20,7 @@
     "test:watch": "vitest",
     "generate-types": "cross-env ENABLE_MAP_TYPE=true node scripts/generateTypes.js",
     "generate-validator": "node scripts/generateSchemaValidator.js",
-    "build:esm": "node ../../scripts/build-esm.js"
+    "build:esm": "node init && node ../../scripts/build-esm.js"
   },
   "repository": {
     "type": "git",
