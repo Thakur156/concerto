@@ -20,8 +20,8 @@
     "doc": "jsdoc --pedantic --recurse -c jsdoc.json",
     "test": "nyc mocha -r ts-node/register --recursive -t 10000",
     "test:watch": "nyc mocha -r ts-node/register --watch --recursive -t 10000",
-    "build": "tsc -p tsconfig.build.json && npm run build:esm",
-    "build:esm": "node ../../scripts/build-esm.js"
+    "build": "node init && tsc -p tsconfig.build.json && npm run build:esm",
+    "build:esm": "node init && node ../../scripts/build-esm.js"
   },
   "repository": {
     "type": "git",

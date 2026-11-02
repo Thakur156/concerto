@@ -64,7 +64,6 @@ jspm_packages
 *.swp
 
 # vscode folder
-.vscode
 package-lock.jsonyarn
 out
 
@@ -81,3 +80,4 @@ dist
 # beads issue tracker data (local only)
 issues.jsonl
 .beads/
+config.bat

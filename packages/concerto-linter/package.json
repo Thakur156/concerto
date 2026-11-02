@@ -12,13 +12,13 @@
   "scripts": {
     "clean": "rimraf dist",
     "prebuild": "npm-run-all clean && cd ./default-ruleset && npm run build",
-    "build": "tsc -p tsconfig.build.json && npm run build:esm",
+    "build": "node init && tsc -p tsconfig.build.json && npm run build:esm",
     "pretest": "npm-run-all lint",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "build:esm": "node ../../scripts/build-esm.js"
+    "build:esm": "node init && node ../../scripts/build-esm.js"
   },
   "repository": {
     "type": "git",
